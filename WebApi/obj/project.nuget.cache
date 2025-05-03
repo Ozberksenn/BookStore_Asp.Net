@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "PWH7FpeJja0=",
+  "success": true,
+  "projectFilePath": "/Users/ozberksen/Desktop/asp.net/BookStore/WebApi/WebApi.csproj",
+  "expectedPackageFiles": [
+    "/Users/ozberksen/.nuget/packages/microsoft.aspnetcore.openapi/9.0.4/microsoft.aspnetcore.openapi.9.0.4.nupkg.sha512",
+    "/Users/ozberksen/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}
