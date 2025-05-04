@@ -64,3 +64,7 @@
 /Users/ozberksen/Desktop/aspnet/BookStore/WebApi/obj/Debug/net9.0/WebApi.pdb
 /Users/ozberksen/Desktop/aspnet/BookStore/WebApi/obj/Debug/net9.0/WebApi.genruntimeconfig.cache
 /Users/ozberksen/Desktop/aspnet/BookStore/WebApi/obj/Debug/net9.0/ref/WebApi.dll
+/Users/ozberksen/Desktop/asp.net/BookStore/WebApi/bin/Debug/net9.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/ozberksen/Desktop/asp.net/BookStore/WebApi/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/ozberksen/Desktop/asp.net/BookStore/WebApi/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/ozberksen/Desktop/asp.net/BookStore/WebApi/obj/Debug/net9.0/WebApi.sourcelink.json

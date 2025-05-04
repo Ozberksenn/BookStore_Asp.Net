@@ -43,7 +43,41 @@ namespace WepApi.AddController
         {
             var book = BookList.Where(x => x.Id == id).SingleOrDefault();
             return book ?? new Book();
+        }
 
+        // Post : 
+        [HttpPost]
+        public IActionResult AddBook([FromBody] Book newBook)
+        {
+            var book = BookList.SingleOrDefault(x => x.Title == newBook.Title);
+            if (book is not null)
+            {
+                return BadRequest("Book already exists");
+            }
+            else
+            {
+                BookList.Add(newBook);
+                return Ok("Book added successfully");
+            }
+        }
+
+        // Put
+        [HttpPut("{id}")]
+        public IActionResult UpdateBook(int id, [FromBody] Book updatedBook)
+        {
+            var book = BookList.SingleOrDefault(x => x.Id == id);
+            if (book is null)
+            {
+                return BadRequest("Book not found");
+            }
+            else
+            {
+                book.GenreId = updatedBook.GenreId != default ? updatedBook.GenreId : book.GenreId;
+                book.Title = updatedBook.Title != default ? updatedBook.Title : book.Title;
+                book.PageCount = updatedBook.PageCount != default ? updatedBook.PageCount : book.PageCount;
+                book.publishDate = updatedBook.publishDate != default ? updatedBook.publishDate : book.publishDate;
+                return Ok("Book updated successfully");
+            }
         }
 
     }
