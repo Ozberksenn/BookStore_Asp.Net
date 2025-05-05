@@ -80,5 +80,21 @@ namespace WepApi.AddController
             }
         }
 
+        // Delete   
+        [HttpDelete("{id}")]
+        public IActionResult DeleteBook(int id)
+        {
+            var book = BookList.SingleOrDefault(x => x.Id == id);
+            if (book is null)
+            {
+                return BadRequest("Book not found");
+            }
+            else
+            {
+                BookList.Remove(book);
+                return Ok("Book deleted successfully");
+            }
+        }
+
     }
 }
