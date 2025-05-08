@@ -4,8 +4,8 @@ using WebApi.DBOperations;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers(); // todo unutma 
-builder.Services.AddOpenApi();
 builder.Services.AddSwaggerGen();
+builder.Services.AddOpenApi();
 
 builder.Services.AddDbContext<BookStoreDbContext>(options =>
     options.UseInMemoryDatabase("BookStoreDB"));
