@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using WebApi;
 using WebApi.BookOperations;
+using WebApi.BookOperations.CreateBook;
 using WebApi.DBOperations;
+using static WebApi.BookOperations.CreateBook.CreateBookCommand;
 
 namespace WepApi.AddController
 {
@@ -57,19 +59,21 @@ namespace WepApi.AddController
 
         // Post : 
         [HttpPost]
-        public IActionResult AddBook([FromBody] Book newBook)
+        public IActionResult AddBook([FromBody] CreateBookModel newBook)
         {
-            var book = _context.Books.SingleOrDefault(x => x.Title == newBook.Title);
-            if (book is not null)
+            CreateBookCommand command = new CreateBookCommand(_context);
+            try
             {
-                return BadRequest("Book already exists");
+                command.Model = newBook;
+                command.Handle();
             }
-            else
+            catch (Exception ex)
             {
-                _context.Books.Add(newBook);
-                _context.SaveChanges();
-                return Ok("Book added successfully");
+                return BadRequest(ex.Message);
             }
+            return Ok("Book added successfully");
+
+
         }
 
         // Put
