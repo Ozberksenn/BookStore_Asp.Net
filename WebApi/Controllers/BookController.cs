@@ -2,9 +2,12 @@ using Microsoft.AspNetCore.Mvc;
 using WebApi;
 using WebApi.BookOperations;
 using WebApi.BookOperations.CreateBook;
+using WebApi.BookOperations.DeleteBook;
 using WebApi.BookOperations.GetBookDetail;
+using WebApi.BookOperations.UpdateBook;
 using WebApi.DBOperations;
 using static WebApi.BookOperations.CreateBook.CreateBookCommand;
+using static WebApi.BookOperations.UpdateBook.UpdateBookCommand;
 
 namespace WepApi.AddController
 {
@@ -87,39 +90,37 @@ namespace WepApi.AddController
 
         // Put
         [HttpPut("{id}")]
-        public IActionResult UpdateBook(int id, [FromBody] Book updatedBook)
+        public IActionResult UpdateBook(int id, [FromBody] UpdateBookModel updatedBook)
         {
-            var book = _context.Books.SingleOrDefault(x => x.Id == id);
-            if (book is null)
+            UpdateBookCommand command = new UpdateBookCommand(_context);
+            try
             {
-                return BadRequest("Book not found");
+                command.BookId = id;
+                command.Model = updatedBook;
+                command.Handle();
             }
-            else
+            catch (Exception ex)
             {
-                book.GenreId = updatedBook.GenreId != default ? updatedBook.GenreId : book.GenreId;
-                book.Title = updatedBook.Title != default ? updatedBook.Title : book.Title;
-                book.PageCount = updatedBook.PageCount != default ? updatedBook.PageCount : book.PageCount;
-                book.publishDate = updatedBook.publishDate != default ? updatedBook.publishDate : book.publishDate;
-                _context.SaveChanges();
-                return Ok("Book updated successfully");
+                return BadRequest(ex.Message);
             }
+            return Ok();
         }
 
         // Delete   
         [HttpDelete("{id}")]
         public IActionResult DeleteBook(int id)
         {
-            var book = _context.Books.SingleOrDefault(x => x.Id == id);
-            if (book is null)
+            DeleteBookCommand command = new DeleteBookCommand(_context);
+            try
             {
-                return BadRequest("Book not found");
+                command.BookId = id;
+                command.Handle();
             }
-            else
+            catch (Exception ex)
             {
-                _context.Books.Remove(book);
-                _context.SaveChanges();
-                return Ok("Book deleted successfully");
+                return BadRequest(ex.Message);
             }
+            return Ok("Book deleted successfully");
         }
 
 
