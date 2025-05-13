@@ -31,26 +31,6 @@ namespace WepApi.AddController
             return Ok(result);
 
         }
-        // [HttpGet("linq")]
-        // public Book GetFindBooks()
-        // {
-        // Linq Çalışması : 
-        // Find && First Or Default
-        //     var book = _context.Books.Where(x => x.Id == 1).FirstOrDefault();
-        //     book = _context.Books.Find(1);
-        //     return book ?? new Book();
-        // Single Or Default
-        // var book = _context.Books.SingleOrDefault(x => x.Title == "Herland");
-        // return book ?? new Book();
-
-        // ToList()
-        // var book = _context.Books.ToList();
-        // return book.FirstOrDefault() ?? new Book();
-
-        // OrderBy
-        // var books = _context.Books.OrderBy(x => x.Id).ToList();
-        // return books
-        // }
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
