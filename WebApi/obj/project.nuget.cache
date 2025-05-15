@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "aZGpzNViwLI=",
+  "dgSpecHash": "/OCdKxX+JyI=",
   "success": true,
   "projectFilePath": "/Users/ozberksen/Desktop/asp.net/BookStore/WebApi/WebApi.csproj",
   "expectedPackageFiles": [
     "/Users/ozberksen/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/Users/ozberksen/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "/Users/ozberksen/.nuget/packages/fluentvalidation/12.0.0/fluentvalidation.12.0.0.nupkg.sha512",
     "/Users/ozberksen/.nuget/packages/microsoft.aspnetcore.openapi/9.0.4/microsoft.aspnetcore.openapi.9.0.4.nupkg.sha512",
     "/Users/ozberksen/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/ozberksen/.nuget/packages/microsoft.entityframeworkcore/9.0.4/microsoft.entityframeworkcore.9.0.4.nupkg.sha512",
