@@ -2,6 +2,7 @@ using System.Reflection;
 using BookStore.MiddlewarePractices;
 using Microsoft.EntityFrameworkCore;
 using WebApi.DBOperations;
+using WebApi.Middlewares;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers(); // todo unutma 
@@ -33,7 +34,7 @@ app.UseHttpsRedirection();
 
 app.MapControllers();
 
-app.UseHello();
+app.UseCustomExceptionMiddleware();
 
 app.Run();
 
