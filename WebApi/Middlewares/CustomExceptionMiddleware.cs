@@ -15,7 +15,6 @@ namespace WebApi.Middlewares
 
         public async Task Invoke(HttpContext context)
         {
-
             try
             {
                 string message = "[Request] HTTP" + context.Request.Method + "-" + context.Request.Path;
@@ -37,7 +36,6 @@ namespace WebApi.Middlewares
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
             var result = JsonConvert.SerializeObject(new { error = ex.Message }, Formatting.None);
-
             return context.Response.WriteAsync(result);
         }
     }
