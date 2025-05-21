@@ -3,12 +3,14 @@ using BookStore.MiddlewarePractices;
 using Microsoft.EntityFrameworkCore;
 using WebApi.DBOperations;
 using WebApi.Middlewares;
+using WebApi.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers(); // todo unutma 
 builder.Services.AddSwaggerGen();
 builder.Services.AddOpenApi();
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+builder.Services.AddSingleton<ILoggerService, ConsoleLogger>();
 
 builder.Services.AddDbContext<BookStoreDbContext>(options =>
     options.UseInMemoryDatabase("BookStoreDB"));
