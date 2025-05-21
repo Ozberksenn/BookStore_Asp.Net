@@ -3,6 +3,7 @@ using AutoMapper;
 using WebApi.BookOperations;
 using WebApi.BookOperations.CreateBook;
 using WebApi.BookOperations.GetBookDetail;
+using WebApi.Entities;
 
 namespace WebApi.Common
 {
