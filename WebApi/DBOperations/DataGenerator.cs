@@ -14,6 +14,20 @@ namespace WebApi.DBOperations
                 {
                     return;
                 }
+                context.Genres.AddRange(
+                    new Genre
+                    {
+                        Name = "Personal Growth"
+                    },
+                    new Genre
+                    {
+                        Name = "Science Fiction"
+                    },
+                    new Genre
+                    {
+                        Name = "Romance"
+                    }
+                );
                 context.Books.AddRange(
                        new Book
                        {
