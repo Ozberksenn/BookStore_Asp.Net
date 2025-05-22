@@ -1,5 +1,6 @@
 
 using AutoMapper;
+using WebApi.Application.AuthorOperations.Queries.GetAuthors;
 using WebApi.Application.GenreOperations.Queries;
 using WebApi.Application.GenreOperations.Queries.GetGenreDetail;
 using WebApi.Application.GenreOperations.Queries.GetGenres;
@@ -20,6 +21,7 @@ namespace WebApi.Common
             CreateMap<Book, BooksViewModel>().ForMember(dest => dest.Genre, opt => opt.MapFrom(src => src.Genre.Name));
             CreateMap<Genre, GenresViewModel>(); // dökümanda açıkla. Genre yi GenreViewModel e dönüştürdük.
             CreateMap<Genre, GenreDetailViewModel>();
+            CreateMap<Author, AuthorsViewModel>();
 
         }
     }

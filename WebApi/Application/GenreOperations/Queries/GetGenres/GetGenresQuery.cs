@@ -26,11 +26,10 @@ namespace WebApi.Application.GenreOperations.Queries.GetGenres
 
     public class GenresViewModel
     {
-        // dökümanda açıkla.
         // Kullanıcıya veya dış dünyaya (API, UI) sadece gerekli bilgileri göstermek için.
         // örneğin is active değerini göstermek istemiyoruz bu yüzden kullanıcıya sadece bu ikisini döneriz.
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
     }
 }
