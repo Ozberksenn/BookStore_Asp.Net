@@ -61,6 +61,7 @@ namespace WepApi.Controllers
         {
             UpdateGenreCommand command = new UpdateGenreCommand(_context);
             command.GenreId = id;
+            command.Model = updateGenre;
 
             UpdateGnreCommandValidator validate = new UpdateGnreCommandValidator();
             validate.ValidateAndThrow(command);

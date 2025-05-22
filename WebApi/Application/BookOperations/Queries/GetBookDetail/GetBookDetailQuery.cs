@@ -1,5 +1,6 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using WebApi;
 using WebApi.Common;
 using WebApi.DBOperations;
@@ -18,7 +19,7 @@ namespace WebApi.BookOperations.GetBookDetail
 
         public BookDetailViewModel Handle()
         {
-            var book = _dbContext.Books.Where(x => x.Id == BookId).SingleOrDefault();
+            var book = _dbContext.Books.Include(x => x.Genre).Where(x => x.Id == BookId).SingleOrDefault();
             if (book is null)
                 throw new InvalidOperationException("Book not founded.");
             BookDetailViewModel vm = _mapper.Map<BookDetailViewModel>(book);
