@@ -7,7 +7,6 @@ namespace WebApi.Application.AuthorOperations.Queries.GetAuthors
     {
         private readonly BookStoreDbContext _context;
         private readonly IMapper _mapper;
-
         public GetAuthorsQuery(BookStoreDbContext context, IMapper mapper)
         {
             _context = context;
@@ -19,7 +18,6 @@ namespace WebApi.Application.AuthorOperations.Queries.GetAuthors
             List<AuthorsViewModel> returnObj = _mapper.Map<List<AuthorsViewModel>>(authors);
             return returnObj;
         }
-
     }
     public class AuthorsViewModel
     {
