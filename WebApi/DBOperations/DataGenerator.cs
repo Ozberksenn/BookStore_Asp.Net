@@ -14,6 +14,27 @@ namespace WebApi.DBOperations
                 {
                     return;
                 }
+                context.Authors.AddRange(
+                    new Author
+                    {
+                        Name = "Orhan Veli",
+                        LastName = "Kanık",
+                        BirthDate = DateTime.Now
+                    },
+                     new Author
+                     {
+                         Name = "Yaşar",
+                         LastName = "Kemal",
+                         BirthDate = DateTime.Now
+                     },
+                     new Author
+                     {
+                         Name = "Sait Faik",
+                         LastName = "Abasıyanık",
+                         BirthDate = DateTime.Now
+                     }
+                );
+
                 context.Genres.AddRange(
                     new Genre
                     {
