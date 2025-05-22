@@ -11,7 +11,7 @@ using WebApi.DBOperations;
 using static WebApi.BookOperations.CreateBook.CreateBookCommand;
 using static WebApi.BookOperations.UpdateBook.UpdateBookCommand;
 
-namespace WepApi.AddController
+namespace WepApi.Controllers
 {
     [ApiController]
     [Route("[controller]s")]
