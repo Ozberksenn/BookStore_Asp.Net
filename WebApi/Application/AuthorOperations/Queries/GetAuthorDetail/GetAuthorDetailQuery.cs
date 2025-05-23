@@ -2,7 +2,7 @@
 using AutoMapper;
 using WebApi.DBOperations;
 
-namespace WebApi.Application.AuthorOperations.Queries.GetAuthors
+namespace WebApi.Application.AuthorOperations.Queries.GetAuthorDetail
 {
     public class GetAuthorDetailQuery
     {
