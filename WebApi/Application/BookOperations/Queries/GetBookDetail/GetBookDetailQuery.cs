@@ -19,7 +19,7 @@ namespace WebApi.BookOperations.GetBookDetail
 
         public BookDetailViewModel Handle()
         {
-            var book = _dbContext.Books.Include(x => x.Genre).Where(x => x.Id == BookId).SingleOrDefault();
+            var book = _dbContext.Books.Include(x => x.Author).Include(x => x.Genre).Where(x => x.Id == BookId).SingleOrDefault();
             if (book is null)
                 throw new InvalidOperationException("Book not founded.");
             BookDetailViewModel vm = _mapper.Map<BookDetailViewModel>(book);
@@ -30,10 +30,12 @@ namespace WebApi.BookOperations.GetBookDetail
 
     public class BookDetailViewModel
     {
-        public string Genre { get; set; }
+
         public string Title { get; set; }
         public int PageCount { get; set; }
         public string PublishDate { get; set; }
+        public string Genre { get; set; }
+        public string Author { get; set; }
     }
 
 }

@@ -76,10 +76,5 @@ namespace WebApi.Controllers
             command.Handle();
             return Ok();
         }
-
-
-
-
-
     }
 }
