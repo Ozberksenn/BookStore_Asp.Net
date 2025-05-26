@@ -5,6 +5,7 @@ using WebApi.Application.AuthorOperations.Commands.CreateAuthor;
 using WebApi.Application.AuthorOperations.DeleteAuthor;
 using WebApi.Application.AuthorOperations.Queries.GetAuthorDetail;
 using WebApi.Application.AuthorOperations.Queries.GetAuthors;
+using WebApi.ApplicationAuthorOperations.Commands.UpdateAuthor;
 using WebApi.DBOperations;
 
 namespace WebApi.Controllers
@@ -51,6 +52,18 @@ namespace WebApi.Controllers
             command.Handle();
             return Ok();
 
+        }
+
+        [HttpPut("id")]
+        public IActionResult UpdateAuthor(int id, [FromBody] UpdateAuthorViewModel updateAuthor)
+        {
+            UpdateAuthorCommand command = new UpdateAuthorCommand(_context);
+            command.AuthorId = id;
+            command.Model = updateAuthor;
+            UpdateAuthorCommandValidator validator = new UpdateAuthorCommandValidator();
+            validator.ValidateAndThrow(command);
+            command.Handle();
+            return Ok();
         }
 
         [HttpDelete("id")]
