@@ -2,6 +2,7 @@ using AutoMapper;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Application.AuthorOperations.Commands.CreateAuthor;
+using WebApi.Application.AuthorOperations.DeleteAuthor;
 using WebApi.Application.AuthorOperations.Queries.GetAuthorDetail;
 using WebApi.Application.AuthorOperations.Queries.GetAuthors;
 using WebApi.DBOperations;
@@ -50,6 +51,17 @@ namespace WebApi.Controllers
             command.Handle();
             return Ok();
 
+        }
+
+        [HttpDelete("id")]
+        public IActionResult DeleteAuthor(int id)
+        {
+            DeleteAuthorCommand command = new DeleteAuthorCommand(_context);
+            command.AuthorId = id;
+            DeleteAuthorCommandValidator validator = new DeleteAuthorCommandValidator();
+            validator.ValidateAndThrow(command);
+            command.Handle();
+            return Ok();
         }
 
 
