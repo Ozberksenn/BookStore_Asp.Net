@@ -5,6 +5,10 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{73A1A69B-560E-44A2-A690-E37D3E361A85}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{0AB3BF05-4346-4AA6-1389-037BE0695223}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.UnitTests", "Tests\WebApi.UnitTests\WebApi.UnitTests.csproj", "{D58ECD98-1D30-4031-A5D7-4ACDE543B638}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,8 +31,23 @@ Global
 		{73A1A69B-560E-44A2-A690-E37D3E361A85}.Release|x64.Build.0 = Release|Any CPU
 		{73A1A69B-560E-44A2-A690-E37D3E361A85}.Release|x86.ActiveCfg = Release|Any CPU
 		{73A1A69B-560E-44A2-A690-E37D3E361A85}.Release|x86.Build.0 = Release|Any CPU
+		{D58ECD98-1D30-4031-A5D7-4ACDE543B638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D58ECD98-1D30-4031-A5D7-4ACDE543B638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D58ECD98-1D30-4031-A5D7-4ACDE543B638}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D58ECD98-1D30-4031-A5D7-4ACDE543B638}.Debug|x64.Build.0 = Debug|Any CPU
+		{D58ECD98-1D30-4031-A5D7-4ACDE543B638}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D58ECD98-1D30-4031-A5D7-4ACDE543B638}.Debug|x86.Build.0 = Debug|Any CPU
+		{D58ECD98-1D30-4031-A5D7-4ACDE543B638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D58ECD98-1D30-4031-A5D7-4ACDE543B638}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D58ECD98-1D30-4031-A5D7-4ACDE543B638}.Release|x64.ActiveCfg = Release|Any CPU
+		{D58ECD98-1D30-4031-A5D7-4ACDE543B638}.Release|x64.Build.0 = Release|Any CPU
+		{D58ECD98-1D30-4031-A5D7-4ACDE543B638}.Release|x86.ActiveCfg = Release|Any CPU
+		{D58ECD98-1D30-4031-A5D7-4ACDE543B638}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D58ECD98-1D30-4031-A5D7-4ACDE543B638} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
 	EndGlobalSection
 EndGlobal
